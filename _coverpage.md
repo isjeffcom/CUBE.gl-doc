@@ -1,16 +1,28 @@
 <!-- _coverpage.md -->
-
-![logo](_media/icon.svg)
+<img src="./assets/cover.png" style="height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0.6;
+    z-index: -1;">
+    
 
 # CUBE.gl <small>Alpha 1.0</small>
 
-> A magical documentation site generator.
+> WebGL-powered Geographic-Based Data Visualization Framework
 
-- Simple and lightweight
-- No statically built html files
-- Multiple themes
+- Visualise GeoData
+- Animation Objects
+- In A Few Line of Code
 
 [GitHub](https://github.com/docsifyjs/docsify/)
 [Examples](#introduction)
 [Showcase](#introduction)
 [Get Started](#introduction)
+
+
+
+<!-- background color -->
+![color](#00000000)

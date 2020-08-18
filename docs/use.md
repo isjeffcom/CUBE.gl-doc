@@ -81,7 +81,7 @@ Run your project, you will see a green cube placed in the middle of your screen 
 
 
 
-![example-1](./assets/use/example-1.png)
+![example-1](../assets/use/example-1.png)
 
 
 
@@ -108,7 +108,7 @@ Run your project, you will see an administrative map of China display in the cen
 
 
 
-![example-2](./assets/use/example-2.png)
+![example-2](../assets/use/example-2.png)
 
 
 
