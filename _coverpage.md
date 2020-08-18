@@ -11,13 +11,11 @@
 
 # CUBE.gl <small>Alpha 1.0</small>
 
-> WebGL-powered Geographic-Based Data Visualization Framework
+> Data-Driven Geospatial Data Visualization Framework
+<br><br><br><br>
 
-- Visualise GeoData
-- Animation Objects
-- In A Few Line of Code
 
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/isjeffcom/CUBE.gl)
 [Examples](https://isjeffcom.github.io/CUBE.gl-examples/)
 [Showcase](https://isjeffcom.github.io/CUBE.gl-examples/)
 [Get Started](#introduction)

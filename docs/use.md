@@ -10,7 +10,9 @@ You can install CUBE.gl with npm and modern front-end project build tools (eg. W
 
 Simply add this line in your .HTML file.
 
-`<script src="https://unpkg.com/cube.gl@latest/dist/cube.js"></script>`
+```html
+<script src="https://unpkg.com/cube.gl@latest/dist/cube.js"></script>
+```
 
 
 
@@ -116,19 +118,17 @@ Run your project, you will see an administrative map of China display in the cen
 
 The CUBE.gl is build upon three.js. You can access the built-in three.js by CUBE.Space.three or CUBE.Space.Three(). The current build is using three.js 0.119. You can also try to import a newer three.js.
 
+More about three.js you can check [here](https://threejs.org)
 
 
 
+## Use with MVVM Framework
 
-## Use with Framework
-
-
-
-The CUBE.gl has no limitation to use in any framework as long as you can access a DOM element to render. 
+The CUBE.gl has no limitation to use in any MVVM framework as long as you can access DOM element to rendering. 
 
 
 
-### Use with vue
+### Use with Vue.js
 
 Here is an example how to use CUBE.gl in Vue.js with Vue-Cli.
 

@@ -133,7 +133,7 @@ The computed position is storage in CUBE.Coordinate.world, if you do not Compute
 
 If you want to positioning by 3d world coordinate, just do this:
 
-```
+```javascript
 let posi = CUBE.Coordinate("World", {x: Number, y: Number, z: Number})
 // or
 let posi = {x: 0, y: 0, z: 0}
@@ -584,7 +584,7 @@ You can replace Font by import a .json format font face object. You can convert 
 
 Create a sphere `new CUBE.Data(name).Sphere(coordinate)`, you need to at least pass in coordinate to Sphere() function.
 
-```
+```javascript
 new CUBE.Data().Sphere
 ```
 

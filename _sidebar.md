@@ -7,7 +7,7 @@
   * [Installation](/docs/use#installation)
   * [Hello World](/docs/use#hello-world)
 * [Use with Three.js](/docs/use#use-with-threejs)
-* [Use with framework](/docs/use#use-with-framework)
+* [Use with MVVM Framework](/docs/use#use-with-mvvm-framework)
   * [Use with Vue](/docs/use#use-with-vue)
 * [Developer Guide](/docs/guide#developer-guide)
   * [Instantized](/docs/guide#instantized)
