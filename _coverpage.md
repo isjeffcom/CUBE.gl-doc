@@ -18,7 +18,7 @@
 [GitHub](https://github.com/isjeffcom/CUBE.gl)
 [Examples](https://isjeffcom.github.io/CUBE.gl-examples/)
 [Showcase](https://isjeffcom.github.io/CUBE.gl-examples/)
-[Get Started](#introduction)
+[Get Started](/docs/intro#introduction)
 
 
 

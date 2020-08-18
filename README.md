@@ -1,5 +1,5 @@
 
-### This is the documentation page for CUBE.gl
+### Welcome to CUBE.gl documentation
 
 
 

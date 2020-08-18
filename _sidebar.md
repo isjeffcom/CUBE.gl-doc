@@ -1,3 +1,4 @@
+* [Home](/#top)
 * [Introduction](/docs/intro#introduction)
   * [Features](/docs/intro#features)
   * [Performance](/docs/intro#performance)
@@ -40,6 +41,7 @@
   * [Bitmap](/docs/guide#bitmap)
     * [Tile Map](/docs/guide#tile-map)
   * [Animation](/docs/guide#animation)
+    * [Animation Engine](/docs/guide.md#animation-engine)
     * [GPSPath](/docs/guide#gpspath)
     * [circular](/docs/guide#circular)
 * [API Reference](/docs/apis/api)

@@ -719,6 +719,20 @@ options.copyright: {String} copyright info
 
 ## Animation
 
+
+
+### Animation Engine
+
+Before you create an animation, you need to set up an Animation Engine. You can create an set animation engine by:
+
+```javascript
+// let C = new CUBE.Space({center, scale})
+let aniEngine = new CUBE.AnimationEngine(C)
+C.SetAniEngine(aniEngine)
+```
+
+
+
 You can create animation for object in CUBE.Space. There are 2 type of animation available now:
 
 - GPSPath
