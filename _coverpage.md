@@ -11,5 +11,5 @@
 - Multiple themes
 
 [GitHub](https://github.com/docsifyjs/docsify/)
-[Examples](#docsify)
+[Examples](./examples/index.html)
 [Get Started](#introduction)
