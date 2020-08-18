@@ -146,8 +146,6 @@ Remember, you have to call ComputeWorldCoordinate() to get the world value, othe
 
 
 
-
-
 If you want to positioning by 3d world coordinate, just do this:
 
 ```javascript
@@ -205,6 +203,10 @@ let amap = new CUBE.GeoJsonLayer("china", china).AdministrativeMap({border: true
 
 
 
+![Administrative Map](../assets/guide/amap.jpg)
+
+
+
 **Parameters**
 
 ```javascript
@@ -222,6 +224,8 @@ hoptions.height: height value
 
 
 
+
+
 ### Buildings
 
 To render building very easy to use,  just like `new CUBE.GeoJsonLayer(name, geojson).Buildings({merge: true, color: 0xE5E5E5}) `
@@ -232,6 +236,10 @@ const buildings = new CUBE.GeoJsonLayer("name", nyc_building).Buildings({merge: 
 ```
 
 *All color, inherited from three.js, is Hexadecimal triplet value which is a ordinary HEX value (6 digit or character you can find in Photoshop/Sketch/Figma) start with a '0x'.*
+
+
+
+![Buildings](../assets/guide/building.jpg)
 
 
 
@@ -267,6 +275,10 @@ You don't need to use merge to optimize road as it will be merged by default. If
 
 
 
+![Buildings](../assets/guide/road.jpg)
+
+
+
 **Parameters**
 
 ```javascript
@@ -297,6 +309,8 @@ C.Add(roads)
 ```
 
 
+
+![Animated Road](../assets/guide/aniroad.jpg)
 
 
 
@@ -493,7 +507,7 @@ new CUBE.Terrain().Ground(800, 800, 8)
 
 
 
-### Terrain
+### GeoTiff
 
 You an also render terrain by `new CUBE.Terrain(name).GeoTiff(tiffData, heightScale, options, material)` 
 
@@ -505,6 +519,10 @@ let terrain = await new CUBE.Terrain("terrain").GeoTiff(buf)
 ```
 
 The terrain data is using wireframe as default material, but you can replace it by import an three.js material in.
+
+
+
+![Geotiff](../assets/guide/terrain.jpg)
 
 
 
@@ -610,6 +628,10 @@ new CUBE.Data("DataName").Cylinder(, city.val * 1.6, 20, .5, 0xff6600)
 
 
 
+![Bar](../assets/guide/bar.jpg)
+
+
+
 **Parameters**
 
 ```javascript
@@ -637,6 +659,10 @@ const shenzhen = {latitude: 22.540368, longitude: 113.934476}
 // Create arc line
 const arc = new CUBE.Data("DataName").Arc(shanghai, shenzhen, 500, .5)
 ```
+
+
+
+![Arc](../assets/guide/arc.jpg)
 
 
 
@@ -669,6 +695,10 @@ if you want this text always face on camera, you can do this:
 const C = new CUBE.Space()
 C.SetLookAt(txt)
 ```
+
+
+
+![Buildings](../assets/guide/text.jpg)
 
 
 
@@ -753,8 +783,6 @@ let cloud = new CUBE.Datasets("cloud", arr).PointCloud()
 
 
 
-**No Parameters**
-
 
 
 ### Heatmap
@@ -768,6 +796,10 @@ let arr = [
 
 let heat = new CUBE.Datasets("population", arr).Heatmap(70, 2.5)
 ```
+
+
+
+![Buildings](../assets/guide/heatmap.jpg)
 
 
 
@@ -827,6 +859,10 @@ new CUBE.Model(posi.world).LoadGLTF('./assets/models/satellite/scene.gltf').then
 
 
 
+![model](../assets/guide/model.jpg)
+
+
+
 **Parameters**
 
 ```javascript
@@ -879,6 +915,10 @@ new CUBE.BitmapLayer("main").TileMap(opt)
 ```
 
 This will automatically render a map as ground base on the center location.
+
+
+
+![tilemap](../assets/guide/tilemap.jpg)
 
 
 
@@ -957,6 +997,10 @@ new CUBE.Animation("test", object, "tween", {repeat: true}).GPSPath(path, 4000)
 
 
 
+![gpspath](../assets/guide/gpspath.gif)
+
+
+
 **Parameters**
 
 ```javascript
@@ -975,6 +1019,10 @@ Make an object circular around center. eg. satellite. Create by `new CUBE.Animat
 ```javascript
 new CUBE.Animation("ani", object, "circular", {startNow: true, repeat: true}).Circular(3,3)
 ```
+
+
+
+![circular](../assets/guide/circular.gif)
 
 
 
