@@ -18,8 +18,8 @@
 - In A Few Line of Code
 
 [GitHub](https://github.com/docsifyjs/docsify/)
-[Examples]([#introduction](https://isjeffcom.github.io/CUBE.gl-examples/))
-[Showcase]([#introduction](https://isjeffcom.github.io/CUBE.gl-examples/))
+[Examples](https://isjeffcom.github.io/CUBE.gl-examples/)
+[Showcase](https://isjeffcom.github.io/CUBE.gl-examples/)
 [Get Started](#introduction)
 
 
