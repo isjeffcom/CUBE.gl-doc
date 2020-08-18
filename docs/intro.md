@@ -1,6 +1,6 @@
 # Introduction
 
-CUBE.gl is a WebGL-powered geographic-based data visualization framework that allows data sciences visualize large-scale datasets and create digital twin in a few line of code. The CUBE.gl builds upon three.js.
+CUBE.gl is a geospatial data visualization framework that allows data analytics to visualize large-scale geo-related datasets or creating digital twin in a few line of code. The CUBE.gl is built upon the three.js.
 
 #### Notice 
 This is an Alpha release with bugs and issues for public testing. Please report any found issue to Github issue page or pull request if you are willing to help.
