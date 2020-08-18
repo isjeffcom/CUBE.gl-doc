@@ -116,7 +116,9 @@ Run your project, you will see an administrative map of China display in the cen
 
 ## Use with Threejs
 
-The CUBE.gl is build upon three.js. You can access the built-in three.js by CUBE.Space.three or CUBE.Space.Three(). The current build is using three.js 0.119. You can also try to import a newer three.js.
+The CUBE.gl is build upon three.js. You can access the built-in three.js by CUBE.Space.three or CUBE.Space.Three(). The current CUBE build is using three.js 0.119. You can also try to implement a different version.
+
+
 
 More about three.js you can check [here](https://threejs.org)
 

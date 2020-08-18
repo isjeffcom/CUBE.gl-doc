@@ -4,7 +4,11 @@
 
 ## Overview
 
-The CUBE.gl has set up most of the
+The CUBE.gl package a range of functions for rapid prototyping. To learn more, read the following documents.
+
+
+
+*It is important for you to know that the CUBE.gl is based on three.js. You can use most of the functions and methods from three.js built by mrdoob. To understand how to use threejs with CUBE.gl, check [here](/docs/use#use-with-threejs)*
 
 
 
@@ -112,6 +116,17 @@ You can call Layer.Find() or CUBE.Space.Find() to find an object in an Layer or 
 
 ## Object positioning
 
+Position in CUBE.gl based on `CUBE.Coordinate` class. The `CUBE.Coordinate` contain 2 type of coordinates: 'gps' and 'world'.
+
+- gps: {latitude, longitude, altitude} WGS84 EPSG4326 (used in GPS) coordinate, altitude is optional
+- world: {x,y,z} 3d world coordinate. The center is 0,0,0.
+
+
+
+At current version, the altitude can not been converted by a real altitude value, it will directly passed to world.y value. 
+
+
+
 If you want to position an object by wgs84 coordinate (with latitude and longitude), you can do:
 
 ```javascript
@@ -127,7 +142,9 @@ mesh.position = posi.world
 
 
 
-The computed position is storage in CUBE.Coordinate.world, if you do not ComputeWorldCoordinate(), the world value will not exist.
+Remember, you have to call ComputeWorldCoordinate() to get the world value, otherwise it would exist.
+
+
 
 
 
@@ -137,6 +154,21 @@ If you want to positioning by 3d world coordinate, just do this:
 let posi = CUBE.Coordinate("World", {x: Number, y: Number, z: Number})
 // or
 let posi = {x: 0, y: 0, z: 0}
+```
+
+
+
+
+
+You can also use Object3D.position to adjust any position, for example
+
+```javascript
+let obj = C.Add(new CUBE.Shapes("Sphere", {x: 0, y: 0, z: 0}).Sphere(1, 0x00ffff))
+obj.position.set(2,2,2)
+// or
+obj.position.x = 2
+obj.position.y = 2
+obj.position.z = 2
 ```
 
 
@@ -155,7 +187,7 @@ To create a `new CUBE.GeoJsonLayer(name, data)` you will need to pass in at leas
 
 **Parameters**
 
-```
+```javascript
 @param {String} name: name of the layer
 @param {Object} geojson: geojson data json object 
 ```
@@ -175,7 +207,7 @@ let amap = new CUBE.GeoJsonLayer("china", china).AdministrativeMap({border: true
 
 **Parameters**
 
-```
+```javascript
 @param {Object} options {merge: Boolean, border: Boolean, collider: Boolean, height: Number} 
 @param {THREE.Material} mat_line replace line material
 @param {THREE.Material} mat_map replace map main material
@@ -205,7 +237,7 @@ const buildings = new CUBE.GeoJsonLayer("name", nyc_building).Buildings({merge: 
 
 **Parameters**
 
-```
+```javascript
 @param {Object} options {merge: Boolean, color: 0xffffff, collider: Boolean, terrain: CUBE.Terrain()} 
 @param {THREE.Material} mat replace building material
 
@@ -237,7 +269,7 @@ You don't need to use merge to optimize road as it will be merged by default. If
 
 **Parameters**
 
-```
+```javascript
 @param {Object} options {color: 0xffffff} 
 @param {THREE.Material} mat replace building material
 
@@ -270,7 +302,7 @@ C.Add(roads)
 
 **Parameters**
 
-```
+```javascript
 @param {Object} options {color: 0xffffff} 
 @param {THREE.Material} mat replace building material
 
@@ -280,6 +312,32 @@ options.animationEngine: {CUBE.AnimationEngine} pass in animations engine pointe
 ```
 
 
+
+### GeoPolygon
+
+To visualize any polygon data from an .geojson file by `new CUBE.GeoJsonLayer(name, geojson).Polygon({merge: Boolean})`
+
+You can draw you own custom json from [geoman.io](https://geoman.io/geojson-editor)
+
+
+
+```javascript
+let island = await (await Request.AsyncGet('./assets/geo/cubemark.json')).json()
+new CUBE.GeoJsonLayer("island", island).Polygon({merge: true})
+```
+
+
+
+**Parameters**
+
+```javascript
+@param {Object} options: {color: 0xffffff, height: Number, merge: Boolean} 
+@param {THREE.Material} mat: replacement material
+
+options.color: color 
+options.height: polygon height
+options.merge: if use merge function to optimise performance
+```
 
 
 
@@ -352,6 +410,55 @@ I will also recommend you to build a middleware for downloading and processing t
 
 
 
+## Polygon
+
+Generate polygon by an array of data: `new CUBE.Polygon(name, coordinate)`
+
+
+
+**Parameters**
+
+```javascript
+@param {String} name: name of the layer
+@param {CUBE.Coordinate || Object} name: wgs84 coordinate
+```
+
+
+
+### Ground
+
+Create as ground. 
+
+```javascript
+let polygon = [
+    [
+        [
+            [longitude, latitude]
+            ...
+        ]
+    ]
+]
+new CUBE.Polygon("NYC", polygon).Ground({info: "info"}, {color: 0xffffff, height: .5})
+
+```
+
+
+
+**Parameters**
+
+```javascript
+@param {Object} info: {} polygon information
+@param {Object} options: {height: 1, color: 0xffffff} 
+@param {THREE.Material} mat: replace line material
+
+options.height: extrude height
+options.color: color
+```
+
+
+
+
+
 ## Terrain
 
 You can create a terrain layer for the ground of your project by `new CUBE.Terrain(name)`.
@@ -378,7 +485,7 @@ new CUBE.Terrain().Ground(800, 800, 8)
 
 **Parameters**
 
-```
+```javascript
 @param {Number} sizeX width
 @param {Number} sizeY height
 @param {Number} segments quality
@@ -403,7 +510,7 @@ The terrain data is using wireframe as default material, but you can replace it 
 
 **Parameters**
 
-```
+```javascript
 @param {ArrayBuffer} tiffData elevation data as array buffer from tiff image 
 @param {Number} heightScale Height scale
 @param {options} options {color: 0x999999}
@@ -480,7 +587,7 @@ new CUBE.Data("DataName").Bar({latitude: Number, longitude: Number}, value=150, 
 
 **Parameters**
 
-```
+```javascript
 @param {Object} coordinate: {latitude: Number, longitude: Number}
 @param {Number} value: segments
 @param {Number} size: size of the sphere
@@ -505,7 +612,7 @@ new CUBE.Data("DataName").Cylinder(, city.val * 1.6, 20, .5, 0xff6600)
 
 **Parameters**
 
-```
+```javascript
 @param {Object} coordinate: {latitude: Number, longitude: Number}
 @param {Number} value: segments
 @param {Number} size: size of the sphere
@@ -535,7 +642,7 @@ const arc = new CUBE.Data("DataName").Arc(shanghai, shenzhen, 500, .5)
 
 **Parameters**
 
-```
+```javascript
 @param {Object} coorA: {latitude: Number, longitude: Number}
 @param {Object} coorB: {latitude: Number, longitude: Number}
 @param {Number} height: top point of the arc
@@ -543,6 +650,8 @@ const arc = new CUBE.Data("DataName").Arc(shanghai, shenzhen, 500, .5)
 @param {THREE.Color} color: 0xff6600
 @param {THREE.Material} mat: replacement material
 ```
+
+
 
 
 
@@ -565,7 +674,7 @@ C.SetLookAt(txt)
 
 **Parameters**
 
-```
+```javascript
 @param {Object} coordinate: {latitude: Number, longitude: Number}
 @param {String} text: text content
 @param {Number} size: font size
@@ -592,7 +701,7 @@ new CUBE.Data().Sphere
 
 **Parameters**
 
-```
+```javascript
 @param {Object} coordinate: {latitude: Number, longitude: Number}
 @param {Number} value: segments
 @param {Number} size: size of the sphere
@@ -621,7 +730,7 @@ let arr = [
 
 **Parameters**
 
-```
+```javascript
 @param {String} name: name of the datasets
 @param {Array} data: an array of data
 ```
@@ -664,7 +773,7 @@ let heat = new CUBE.Datasets("population", arr).Heatmap(70, 2.5)
 
 **Parameters**
 
-```
+```javascript
 @param {Number} size: heatmap canvas size
 @param {Number} radius: highlight radius
 ```
@@ -678,6 +787,78 @@ this.C.GetShaderEngine().Register(heat.children[0], "uniforms", "heightColor", {
 ```
 
 *Color/colors of the Point Cloud and Heatmap was not configurable for now. It will be add on in next version*
+
+
+
+## Model
+
+You can load a 3D model to the space by `new CUBE.Model(position)`. For loading model, you need to have a world position first, if you want to transform WGS84 (latitude and longitude) coordinate to world position, you will need`new CUBE.Coordinate("",{latitude: Number, longitude: Number}).ComputeWorldCoordinate()` .
+
+
+
+**Parameters**
+
+```javascript
+@param {String} name: name of the data
+```
+
+
+
+*We only support GLTF model at this stage, more will coming soon. You can convert your 3D model to GLTF by [Blender](https://www.blender.org/) or [Sketchfab](https://sketchfab.com/). You can also download model in .GLTF format from [Sketchfab](https://sketchfab.com/).*
+
+
+
+### LoadGLTF
+
+Load GLTF 3D model by `new CUBE.Model(position).LoadGLTF(path)`
+
+
+
+For example:
+
+```javascript
+// C -> CUBE.Space()
+const posi = new CUBE.Coordinate("GPS", {latitude: 55.943686, longitude: -3.188822, altitude: 3}).ComputeWorldCoordinate()
+
+new CUBE.Model(posi.world).LoadGLTF('./assets/models/satellite/scene.gltf').then(()=>{
+    C.Add(m.object)
+})
+```
+
+
+
+**Parameters**
+
+```javascript
+@param {THREE.Vector3 || Object} coordinate: {x,y,z} World coordinate
+```
+
+
+
+##### Attach
+
+You can also attach any other 3d object (THREE.Object3D) into this model:
+
+```javascript
+new CUBE.Model(posi.world).LoadGLTF('./assets/models/satellite/scene.gltf').then(()=>{
+	// Attach a THREE.Light to this object
+    let light = new C.three.DirectionalLight(0xffffff, .4)
+    light.position.set(2, 2, 2)
+    m.Attach(light) // Attach light
+    C.Add(m.object)
+})
+
+```
+
+
+
+**Parameters**
+
+```javascript
+@param {THREE.Object3D} obj: another object
+```
+
+
 
 
 
@@ -703,10 +884,10 @@ This will automatically render a map as ground base on the center location.
 
 **Parameters**
 
-```
+```javascript
 @param {Object} opt: options
 
-options.source: {String} tile map server eg. https://b.tile.openstreetmap.org/
+options.source: {String} tile map server //eg. https://b.tile.openstreetmap.org/
 options.size: {Number} overwrite size
 options.copyright: {String} copyright info
 ```
@@ -744,7 +925,7 @@ For create an animation by `new CUBE.Animation(name, object, type)` you need to 
 
 **Parameters**
 
-```
+```javascript
 @param {String} name: animation name
 @param {Object3D} object: a 3D object
 @param {String} type: animation type
@@ -778,7 +959,7 @@ new CUBE.Animation("test", object, "tween", {repeat: true}).GPSPath(path, 4000)
 
 **Parameters**
 
-```
+```javascript
 @param {Array} paths: an array of paths
 @param {Number} duration: how long of this animation
 ```
@@ -799,7 +980,7 @@ new CUBE.Animation("ani", object, "circular", {startNow: true, repeat: true}).Ci
 
 **Parameters**
 
-```
+```javascript
 @param {Number} radius: rotating radius
 @param {Number} height: rotating altitude
 ```
@@ -814,7 +995,7 @@ You can add some basic shape to the space by `new CUBE.Shapes(name, position)`
 
 **Parameters**
 
-```
+```javascript
 @param {String} name: name of the shape
 @param {Object || THREE.Vector3} position: object position
 ```
@@ -836,7 +1017,7 @@ new CUBE.Shapes("Box", posi.world).Box(2)
 
 **Parameters**
 
-```
+```javascript
 @param {Number} size: box size
 @param {Number} color: color
 ```
@@ -860,7 +1041,7 @@ new CUBE.Shapes("Box", posi.world).Sphere(2, 0xFAFAFA)
 
 **Parameters**
 
-```
+```javascript
 @param {Number} size: box size
 @param {Number} color: color
 ```
@@ -882,7 +1063,7 @@ new CUBE.Shapes("Box", posi.world).cylinder(2)
 
 **Parameters**
 
-```
+```javascript
 @param {Number} size: box size
 @param {Number} color: color
 ```
