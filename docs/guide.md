@@ -12,7 +12,7 @@ The CUBE.gl package a range of functions for rapid prototyping. This library is 
 
 
 
-## Instantized
+## Initialize Space
 
 All the development process started from construct a CUBE.Space(). A CUBE.Space() created by cloning a default config file. You can pass in an object to overwrite the default config. 
 
@@ -44,7 +44,7 @@ You need to consider the scale carefully. As for most of the case, you will set 
 
 
 
-The full list of configuration can be found [here](/apis/space)
+The full list of configuration can be found [here](docs/apis/spaceconfig)
 
 
 

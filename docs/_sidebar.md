@@ -11,7 +11,7 @@
 * [Use with MVVM Framework](/docs/use#use-with-mvvm-framework)
   * [Use with Vue](/docs/use#use-with-vuejs)
 * [Developer Guide](/docs/guide#developer-guide)
-  * [Instantized](/docs/guide#instantized)
+  * [Init Space](/docs/guide#instantized)
   * [Object and Layer](/docs/guide#object-and-layer)
     * [Add an object or layer](/docs/guide#add-object-or-layer)
     * [Delete and clear layer](/docs/guide#delete-and-clear-layer)
@@ -51,3 +51,4 @@
     * [GPSPath](/docs/guide#gpspath)
     * [circular](/docs/guide#circular)
 * [API Reference](/docs/apis/api)
+  * [Space config](/docs/apis/spaceconfig.md)
