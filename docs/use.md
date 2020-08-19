@@ -93,7 +93,7 @@ Run your project, you will see a green cube placed in the middle of your screen 
 // Add Geojson Map Layer
 const china = 'https://gistcdn.githack.com/isjeffcom/787220f51465c8365b4ccc7247a919e7/raw/1afd3f92f64d8dd01534b6831d65de395f07b43e/china.geojson'
 fetch(china).then(async (res)=>{
-    C.Add(new CUBE.GeoJsonLayer("china", await res.json()).AdministrativeMap({border: true, height: .5}))
+    C.Add(new CUBE.GeoLayer("china", await res.json()).AdministrativeMap({border: true, height: .5}))
 })
 
 // Add an cylinder bar at Shanghai City Center

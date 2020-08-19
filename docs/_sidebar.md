@@ -17,7 +17,7 @@
     * [Delete and clear layer](/docs/guide#delete-and-clear-layer)
     * [Find object in layer](/docs/guide#find-object-in-layer)
   * [Object positioning](/docs/guide#object-positioning)
-  * [GeoJsonLayer](/docs/guide#geojsonlayer)
+  * [GeoLayer](/docs/guide#GeoLayer)
     * [Administrative](/docs/guide#administrative)
     * [Buildings](/docs/guide#buildings)
     * [Road](/docs/guide#road)

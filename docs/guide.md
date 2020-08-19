@@ -78,7 +78,7 @@ C.Add(things.layer) // Add this layer to CUBE.Space
 
 
 
-In CUBE.gl, all objects from Layer classes (eg. GeoJsonLayer) and Datasets class will return an Layer.layer object. You can add to CUBE.Space or any other layer directly. 
+In CUBE.gl, all objects from Layer classes (eg. GeoLayer) and Datasets class will return an Layer.layer object. You can add to CUBE.Space or any other layer directly. 
 
 All objects from Data class is a single Object3D, you can add to CUBE.Space or any other layer directly.
 
@@ -173,13 +173,13 @@ obj.position.z = 2
 
 
 
-## GeoJsonLayer
+## GeoLayer
 
-City is about ground, buildings, road and water. To visualize a city, you will need CUBE.GeoJsonLayer() class which is able to read .geojson format data and parse it to 3D model.
+City is about ground, buildings, road and water. To visualize a city, you will need CUBE.GeoLayer() class which is able to read .geojson format data and parse it to 3D model.
 
 
 
-To create a `new CUBE.GeoJsonLayer(name, data)` you will need to pass in at least 2 parameters: name for data name, data contain .geojson data object. 
+To create a `new CUBE.GeoLayer(name, data)` you will need to pass in at least 2 parameters: name for data name, data contain .geojson data object. 
 
 
 
@@ -194,11 +194,11 @@ To create a `new CUBE.GeoJsonLayer(name, data)` you will need to pass in at leas
 
 ### Administrative
 
-To render a Administrative map as ground `new CUBE.GeoJsonLayer(name, geojson).AdministrativeMap(options, mat_map, mat_line)`
+To render a Administrative map as ground `new CUBE.GeoLayer(name, geojson).AdministrativeMap(options, mat_map, mat_line)`
 
 ```javascript
 let china = await (await fetch('./assets/geo/china.geojson')).json()
-let amap = new CUBE.GeoJsonLayer("china", china).AdministrativeMap({border: true, height: .5})
+let amap = new CUBE.GeoLayer("china", china).AdministrativeMap({border: true, height: .5})
 ```
 
 
@@ -228,11 +228,11 @@ hoptions.height: height value
 
 ### Buildings
 
-To render building very easy to use,  just like `new CUBE.GeoJsonLayer(name, geojson).Buildings({merge: true, color: 0xE5E5E5}) `
+To render building very easy to use,  just like `new CUBE.GeoLayer(name, geojson).Buildings({merge: true, color: 0xE5E5E5}) `
 
 ```javascript
 const nyc_building = await (await fetch('<url>/buildings.geojson')).json()
-const buildings = new CUBE.GeoJsonLayer("name", nyc_building).Buildings({merge: true, color: 0xE5E5E5})
+const buildings = new CUBE.GeoLayer("name", nyc_building).Buildings({merge: true, color: 0xE5E5E5})
 ```
 
 *All color, inherited from three.js, is Hexadecimal triplet value which is a ordinary HEX value (6 digit or character you can find in Photoshop/Sketch/Figma) start with a '0x'.*
@@ -264,11 +264,11 @@ Don't forget to use **merge: true** option to optimize the performance, it reall
 
 ### Road
 
-To render roads,  do ` new CUBE.GeoJsonLayer(name, geojson).Road(options, material)`
+To render roads,  do ` new CUBE.GeoLayer(name, geojson).Road(options, material)`
 
 ```javascript
 let nyc_road = await (await fetch('<url>/road.geojson')).json()
-let roads = new CUBE.GeoJsonLayer("name", nyc_road).Road()
+let roads = new CUBE.GeoLayer("name", nyc_road).Road()
 ```
 
 You don't need to use merge to optimize road as it will be merged by default. If you wish not to merge (usually when if you need interaction or create animation), use RoadSp() instead.
@@ -292,7 +292,7 @@ options.color: {Number} color
 
 ### RoadSp
 
-A special type of road. Road render by this method will have significant lower performance compare to Road(). But it can attach a built-in visual effect animation. Call ` new CUBE.GeoJsonLayer(name, geojson).RoadSp(options, material)`
+A special type of road. Road render by this method will have significant lower performance compare to Road(). But it can attach a built-in visual effect animation. Call ` new CUBE.GeoLayer(name, geojson).RoadSp(options, material)`
 
 ```javascript
 // C -> CUBE.Space
@@ -304,7 +304,7 @@ C.SetAniEngine(aniEngine)
 let roadData = await (await fetch('./assets/geo/project/highway.geojson')).json()
 
 // Create RoadSp
-let roads = new CUBE.GeoJsonLayer("roadsp", roadData).RoadSp({animation: true, animationEngine: aniEngine, terrain: terrain})
+let roads = new CUBE.GeoLayer("roadsp", roadData).RoadSp({animation: true, animationEngine: aniEngine, terrain: terrain})
 C.Add(roads)
 ```
 
@@ -329,7 +329,7 @@ options.animationEngine: {CUBE.AnimationEngine} pass in animations engine pointe
 
 ### GeoPolygon
 
-To visualize any polygon data from an .geojson file by `new CUBE.GeoJsonLayer(name, geojson).Polygon({merge: Boolean})`
+To visualize any polygon data from an .geojson file by `new CUBE.GeoLayer(name, geojson).Polygon({merge: Boolean})`
 
 You can draw you own custom json from [geoman.io](https://geoman.io/geojson-editor)
 
@@ -337,7 +337,7 @@ You can draw you own custom json from [geoman.io](https://geoman.io/geojson-edit
 
 ```javascript
 let island = await (await fetch('./assets/geo/cubemark.json')).json()
-new CUBE.GeoJsonLayer("island", island).Polygon({merge: true})
+new CUBE.GeoLayer("island", island).Polygon({merge: true})
 ```
 
 
@@ -377,11 +377,11 @@ features[i].properties.highway || features[i].properties.tags.highway
 
 
 
-OK. In one line of code (without http request), you are able to create a whole city, in your browser.  You can also choose to set a color or even replace material and for more options: see [here](/apis/geojsonlayer).
+OK. In one line of code (without http request), you are able to create a whole city, in your browser.  You can also choose to set a color or even replace material and for more options: see [here](/apis/GeoLayer).
 
 
 
-*The Water is unfinished yet, I will not introduce it in this stage but you can find it in source code GeoJsonLayer() class.*
+*The Water is unfinished yet, I will not introduce it in this stage but you can find it in source code GeoLayer() class.*
 
 
 
@@ -555,12 +555,12 @@ let terrain = await new CUBE.Terrain("terrain").GeoTiff(buf)
 
 // Buildings
 let ed = await (await fetch('<url>/building.geojson')).json()
-let buildings = new CUBE.GeoJsonLayer("buildings", ed).Buildings({merge: true, terrain: terrain})
+let buildings = new CUBE.GeoLayer("buildings", ed).Buildings({merge: true, terrain: terrain})
 
 
 // Road
 let roadData = await (await fetch('<url>/highway.geojson')).json()
-let roads = new CUBE.GeoJsonLayer("roads", roadData).Road({terrain: terrain})
+let roads = new CUBE.GeoLayer("roads", roadData).Road({terrain: terrain})
 ```
 
 
