@@ -36,15 +36,15 @@ You must define your central location, and it will be as a base reference for al
 
 
 
-`{center: {{latitude: Number, longitude: Number}}}`
+`{center: {latitude: Number, longitude: Number}}`
 
 
 
-You need to consider the scale carefully. As for most of the case, you will set up a scale in a range between 1-15 to visualize things in the city level. For display a map as big (geographically) as a country like the US or China, the number could range between 0.001 - 0.01.
+Consider the scale carefully. As for most of the case, you will set up a scale in a range between 1-15 to visualize things in the city level. For display a map as big (geographically) as a country like the US or China, the number could range between 0.001 - 0.01.
 
 
 
-The full list of configuration can be found [here](docs/apis/spaceconfig)
+**List of available configuration check [here](docs/apis/spaceconfig)**
 
 
 
