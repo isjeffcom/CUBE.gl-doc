@@ -1,12 +1,12 @@
 # Introduction
 
-CUBE.gl is a geospatial data visualization framework for visualizing large-scale geo-related datasets or creating digital twin in a few line of code. The CUBE.gl is built upon the three.js, powered by Web-GL.
+CUBE.gl is a geospatial data visualization framework for visualizing large-scale geo-related datasets or create digital twin in a few line of code. The CUBE.gl is built upon the brilliant 3D library three.js by mrdoob, powered by Web-GL.
 
 
 
 #### *Notice* 
-*This is an Alpha release with bugs and issues for public testing. Please report any found issue to Github issue page or pull request if you are willing to help.*
 
+***This version is in publish for testing and in active development / update. It is not recommended to use this library in production enviornment. Please report Bugs and issues the Github issue page.***
 
 
 
@@ -28,11 +28,13 @@ CUBE.gl is a geospatial data visualization framework for visualizing large-scale
 
 ## Performance
 
-Render the 6km of a New York City with 144 FPS
+[GTX 1066Ti Gaming Laptop]
 
-Render 6km of center New York City with 1000+ animated object, shader animation enabled heatmap with 60 FPS
+Render 6km of a New York City with building and road in 144 frame per second (FPS).
 
-(both merge option enabled for CUBE.Building, test in an GTX 1066Ti Gaming Laptop)
+Render 6km of center New York with 1000+ animated object, shader animation enabled heatmap with 60 FPS
+
+(both merge option enabled for CUBE.Building)
 
 
 

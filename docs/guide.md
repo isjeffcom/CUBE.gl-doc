@@ -4,11 +4,11 @@
 
 ## Overview
 
-The CUBE.gl package a range of functions for rapid prototyping. To learn more, read the following documents.
+The CUBE.gl package a range of functions for rapid prototyping. This library is in publish for **testing** and in **active development**.  
 
 
 
-*It is important for you to know that the CUBE.gl is based on three.js. You can use most of the functions and methods from three.js built by mrdoob. To understand how to use threejs with CUBE.gl, check [here](/docs/use#use-with-threejs)*
+*It is important for you to know that the CUBE.gl is based on the brilliant **three.js** by **mrdoob**. You can use most of the three.js functions and methods in CUBE. To understand how to use threejs with CUBE.gl, check [here](/docs/use#use-with-threejs)*
 
 
 
@@ -116,10 +116,10 @@ You can call Layer.Find() or CUBE.Space.Find() to find an object in an Layer or 
 
 ## Object positioning
 
-Position in CUBE.gl based on `CUBE.Coordinate` class. The `CUBE.Coordinate` contain 2 type of coordinates: 'gps' and 'world'.
+Position in CUBE.gl based on `CUBE.Coordinate` class. The `CUBE.Coordinate` contain 2 type of coordinates: 'GPS' and 'World'.
 
-- gps: {latitude, longitude, altitude} WGS84 EPSG4326 (used in GPS) coordinate, altitude is optional
-- world: {x,y,z} 3d world coordinate. The center is 0,0,0.
+- GPS: {latitude, longitude, altitude} WGS84 EPSG4326 (used in GPS) coordinate, altitude is optional
+- World: {x,y,z} 3d world coordinate. The center is 0,0,0.
 
 
 
@@ -158,7 +158,7 @@ let posi = {x: 0, y: 0, z: 0}
 
 
 
-You can also use Object3D.position to adjust any position, for example
+You can also use Object3D.position to adjust any object, for example
 
 ```javascript
 let obj = C.Add(new CUBE.Shapes("Sphere", {x: 0, y: 0, z: 0}).Sphere(1, 0x00ffff))
@@ -197,7 +197,7 @@ To create a `new CUBE.GeoJsonLayer(name, data)` you will need to pass in at leas
 To render a Administrative map as ground `new CUBE.GeoJsonLayer(name, geojson).AdministrativeMap(options, mat_map, mat_line)`
 
 ```javascript
-let china = await (await Request.AsyncGet('./assets/geo/china.geojson')).json()
+let china = await (await fetch('./assets/geo/china.geojson')).json()
 let amap = new CUBE.GeoJsonLayer("china", china).AdministrativeMap({border: true, height: .5})
 ```
 
@@ -336,7 +336,7 @@ You can draw you own custom json from [geoman.io](https://geoman.io/geojson-edit
 
 
 ```javascript
-let island = await (await Request.AsyncGet('./assets/geo/cubemark.json')).json()
+let island = await (await fetch('./assets/geo/cubemark.json')).json()
 new CUBE.GeoJsonLayer("island", island).Polygon({merge: true})
 ```
 
