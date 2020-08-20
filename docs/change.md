@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.0.12
+###### 2020.08.21
+Bugfix: Data.Text cannot detect altitude value
+
 ### 1.0.11
 ###### 2020.08.20
 Change GeoJsonLayer class name to GeoLayer, backward compatible: you can still use GeoJsonLayer to perform the same function.
