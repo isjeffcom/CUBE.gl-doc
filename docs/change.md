@@ -1,8 +1,12 @@
 # Changelog
 
+### 1.0.13
+###### 2020.08.21
+Bug fix: cannot access building:levels when loading buildings
+
 ### 1.0.12
 ###### 2020.08.21
-Bugfix: Data.Text cannot detect altitude value
+Bug fix: Data.Text cannot detect altitude value
 
 ### 1.0.11
 ###### 2020.08.20

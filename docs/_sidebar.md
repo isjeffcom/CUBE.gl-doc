@@ -50,5 +50,6 @@
     * [Animation Engine](/docs/guide.md#animation-engine)
     * [GPSPath](/docs/guide#gpspath)
     * [circular](/docs/guide#circular)
+* [Change Log](/docs/change)
 * [API Reference](/docs/apis/api)
   * [Space config](/docs/apis/spaceconfig.md)
