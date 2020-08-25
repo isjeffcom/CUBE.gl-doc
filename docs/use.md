@@ -11,8 +11,12 @@ You can install CUBE.gl with npm and modern front-end project build tools (eg. W
 Simply add this line in your .HTML file.
 
 ```html
-<script src="https://unpkg.com/cube.gl@latest/dist/cube.js"></script>
+<script src="https://unpkg.com/cube.gl@latest/dist/cubegl.js"></script>
 ```
+
+
+
+*For avoid name conflict, the 'cube.js' in the CDN address were changed to 'cubegl.js', the older name is still useable but they are stayed in 1.0.13 version. NPM install will not be effected*.
 
 
 
