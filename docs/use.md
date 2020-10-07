@@ -118,6 +118,60 @@ Run your project, you will see an administrative map of China display in the cen
 
 
 
+### Use High-Level API
+
+High-level API only contain City constructor for now. The City class enables the abilities to download data, and display any part of city (most of)  in 3D around the world by CUBE.gl. You can create a Paris city center (Cathédrale Notre-Dame) in range 500 meters by 
+
+
+
+```javascript
+Init()
+Update()
+
+// Get Container
+const container = document.getElementById('cont')
+
+// Ready for CUBE Instance
+let C
+
+async function Init(){
+
+    // Init CUBE Instance
+    C = new CUBE.Space(container, {
+        background: "333333", 
+        center: {latitude: 48.851837, longitude: 2.356544}, 
+        scale: 10,
+        camera:{
+            position: {x: 6, y: 10, z: 6}
+        }
+    })
+
+    const cm = new CUBE.City(500) // range 500 meters
+    
+	// Generate building and roads
+    const building = await cm.Buildings()
+    const roads = await cm.Roads()
+
+    document.getElementById("loading").style.display = "none"
+
+    roads.position.y -= 1
+    C.Add(building)
+    C.Add(roads)
+
+}
+
+function Update(){
+    requestAnimationFrame(Update)
+    C.Runtime()
+}
+```
+
+
+
+![paris](../assets/use/paris.png)
+
+
+
 ## Use with Threejs
 
 The CUBE.gl is build upon three.js. You can access the built-in three.js by CUBE.Space.three or CUBE.Space.Three(). The current CUBE build is using three.js 0.119. You can also try to implement a different version.

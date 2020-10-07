@@ -1322,3 +1322,88 @@ options.duration: focus animation time duration, default is 800
 
 
 
+# High-Level API
+
+High level API can help you download the data you need to generate geographical elements.
+
+
+
+* **High-Level API usually require internet connection to download data from third-party APIs.**
+* **Due to the stabilities of High-Level API depends on internet connection, remote server status and environments, it is not recommended to use in production environment.**
+
+
+
+## City
+
+Use City constructor to start a manger. This class currently have no management purpose, but it could be design as a 3D tile map server in the future.
+
+
+
+You can start a City class by `new CUBE.City(range, options={})`
+
+```javascript
+const cm = new CUBE.City() 
+```
+
+
+
+**Parameters**
+
+```javascript
+@param {Number} [range] minimal range of a city in meter, default is 1000
+@param {String} [options.API_MAP] allow user replace remote building/water/roads data api address
+@param {String} [options.API_TERRAIN] allow user replace remote terrain data api address
+```
+
+All optional
+
+
+
+### Generate City Buildings
+
+Generate a city buildings by the center location, use `CUBE.City().Buildings(name, options, material)`.
+
+```javascript
+// Generate building and roads, 'cm' is CUBE.City()
+const building = await cm.Buildings()
+```
+
+
+
+**Parameters** 
+
+```javascript
+@param {String} [name] - name of the layer
+@param [options] - to replace building geo layer options, check GeoLayer for more info
+@param {THREE.Material} [material] - to replace building material, check GeoLayer for more info
+```
+
+All optional
+
+
+
+### Generate City Roads
+
+Generate a city buildings by the center location, use `CUBE.City().Roads(name, options, material)`.
+
+```javascript
+// Generate building and roads, 'cm' is CUBE.City()
+const building = await cm.Roads()
+```
+
+
+
+**Parameters** 
+
+```javascript
+@param {String} [name] - name of the layer
+@param {Object} [options] - replace roads geo layer options, check GeoLayer for more info
+@param {THREE.Material} [material] - replace roads material, check GeoLayer for more info
+```
+
+All optional
+
+
+
+![paris](../assets/guide/paris.png)
+

@@ -1,6 +1,19 @@
 # Changelog
 
+### 1.0.18
+
+2020.10.07
+
+High-level API
+
+* Automatically download geo data to generate city building
+
+* Automatically download geo data to generate city roads
+
+  
+
 ### 1.0.16
+
 ##### 2020.08.25
 
 Add interaction module:
