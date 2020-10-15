@@ -125,14 +125,16 @@ High-level API only contain City constructor for now. The City class enables the
 
 
 ```javascript
-Init()
-Update()
+
 
 // Get Container
 const container = document.getElementById('cont')
 
 // Ready for CUBE Instance
 let C
+
+Init()
+Update()
 
 async function Init(){
 
@@ -148,11 +150,9 @@ async function Init(){
 
     const cm = new CUBE.City(500) // range 500 meters
     
-	// Generate building and roads
+		// Generate building and roads
     const building = await cm.Buildings()
     const roads = await cm.Roads()
-
-    document.getElementById("loading").style.display = "none"
 
     roads.position.y -= 1
     C.Add(building)
