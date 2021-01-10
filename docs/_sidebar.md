@@ -61,6 +61,8 @@
     * [Fly To](/docs/guide#fly-to)
     * [Fly To a GPS coordinate](/docs/guide#fly-to-a-gps-coordinate)
     * [Camera focus](/docs/guide#camera-focus)
+  * High-Level API
+    * [City](/docs/guide#city)
 * [Change Log](/docs/change)
 * [API Reference](/docs/apis/api)
   * [Space config](/docs/apis/spaceconfig.md)
