@@ -1,5 +1,15 @@
 # Changelog
 
+
+
+### 1.0.20
+
+2021.09.09
+
+Export and download 3D model in .obj format
+
+
+
 ### 1.0.18
 
 2020.10.07

@@ -1407,3 +1407,51 @@ All optional
 
 ![paris](../assets/guide/paris.png)
 
+
+
+## Export and Download
+
+You can export any layer(which must be an Threejs Object3D object) from exportOBJ in CUBE.Space. Material not included.
+
+```javascript
+// Init CUBE Instance
+const C = new CUBE.Space(container, {
+    background: "333333", 
+    center: Center, 
+    scale: 5,
+    interaction: {
+        enable: true,
+        select: true,
+        hover: true
+    },
+    camera:{
+        position: {x: 6, y: 10, z: 6}
+    }
+})
+
+// Load Edinburgh Buildings
+const ed = await (await fetch('<somewhere>/building.geojson')).json()
+const buildings = new CUBE.GeoLayer("buildings", ed).Buildings({merge: true, collider: true})
+C.Add(buildings)
+
+// Get obj in raw text
+const objTextRaw = C.exportOBJ(buildings);
+
+// To blob
+const blob = new Blob([objTextRaw], { type: 'model/obj' });
+const url  = window.URL.createObjectURL(blob);
+
+// Download
+const link = document.createElement('a');
+link.href = url;
+link.download = `export.obj`;
+link.click();
+
+// Release
+window.URL.revokeObjectURL(link.href);
+
+```
+
+
+
+See more at:  https://demo.cubegl.org/?p=download

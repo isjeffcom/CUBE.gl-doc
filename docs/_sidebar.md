@@ -63,6 +63,7 @@
     * [Camera focus](/docs/guide#camera-focus)
   * High-Level API
     * [City](/docs/guide#city)
+    * [Export and Download](/docs/guide#export-and-download)
 * [Change Log](/docs/change)
 * [API Reference](/docs/apis/api)
   * [Space config](/docs/apis/spaceconfig.md)
