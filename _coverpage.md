@@ -1,8 +1,4 @@
 <!-- _coverpage.md -->
-<div style="height: 100%;width: 100%;position: absolute;left: 0px;top: 0px;z-index: -1;">
-    <img src="./assets/cover.png" style="height:100%;width:100%; object-fit: cover; opacity: 0.6; ">
-</div>
-    
 
 # CUBE.gl <small>Alpha 1.0</small>
 
