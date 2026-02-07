@@ -2,11 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CUBE.gl - WebGL-powered Geographic-Based Data Visualization Framework</title>
+  <title>CUBE.gl - WebGL Data-Driven Geospatial Data Visualization Framework | 3D Map, Digital Twin</title>
   <link rel="icon" href="./favicon.png">
+  <link rel="canonical" href="https://cubegl.org/" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="CUBE.gl Documentation">
+  <meta name="description" content="CUBE.gl is an open-source WebGL-powered geospatial data visualization framework built on Three.js. Create 3D maps, digital twins, and large-scale geographic visualizations with a few lines of code.">
+  <meta name="keywords" content="CUBE.gl, WebGL, geospatial, data visualization, 3D map, digital twin, Three.js, GIS, geographic visualization, open source, JavaScript, framework">
+  <meta name="author" content="CUBE.gl">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cubegl.org/">
+  <meta property="og:title" content="CUBE.gl - Data-Driven Geospatial Data Visualization Framework">
+  <meta property="og:description" content="Open-source WebGL framework for 3D geospatial data visualization. Build digital twins and interactive 3D maps with a few lines of code.">
+  <meta property="og:image" content="https://cubegl.org/assets/cover.png">
+  <meta property="og:site_name" content="CUBE.gl">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://cubegl.org/">
+  <meta name="twitter:title" content="CUBE.gl - Data-Driven Geospatial Data Visualization Framework">
+  <meta name="twitter:description" content="Open-source WebGL framework for 3D geospatial data visualization. Build digital twins and interactive 3D maps with a few lines of code.">
+  <meta name="twitter:image" content="https://cubegl.org/assets/cover.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CUBE.gl",
+    "url": "https://cubegl.org/",
+    "description": "An open-source WebGL-powered geospatial data visualization framework built on Three.js for creating 3D maps and digital twins.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "softwareHelp": {
+      "@type": "CreativeWork",
+      "url": "https://cubegl.org/#/docs/intro"
+    },
+    "codeRepository": "https://github.com/isjeffcom/CUBE.gl"
+  }
+  </script>
+
+  <!-- FAQ Structured Data for SEO Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is CUBE.gl and what is it used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CUBE.gl is an open-source, WebGL-powered geospatial data visualization framework built on Three.js. It enables developers to create interactive 3D maps, digital twins, smart city visualizations, and large-scale geographic data visualizations directly in the browser with just a few lines of JavaScript code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to create a 3D map in the browser with JavaScript?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use CUBE.gl to create 3D maps in the browser. Install it via npm with 'npm install cube.gl', initialize a Space with your map configuration including coordinates and Mapbox token, then add GeoJSON layers for buildings, roads, and terrain. CUBE.gl handles all WebGL rendering through Three.js automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a digital twin and how to build one for a city?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A digital twin is a virtual replica of a physical environment that mirrors real-world data in real time. With CUBE.gl, you can build urban digital twins by loading GeoJSON building data, adding terrain elevation from GeoTIFF, overlaying real-time IoT sensor data as heatmaps or point clouds, and animating GPS trajectories — all rendered in interactive 3D in the browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to visualize GeoJSON data in 3D on a web map?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CUBE.gl provides built-in GeoLayer components to render GeoJSON data in 3D. Simply load your GeoJSON file, create a Buildings, Road, or GeoPolygon layer, and add it to the CUBE.gl Space. The framework automatically converts geographic coordinates to 3D positions and renders extruded geometries with WebGL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Three.js for geospatial and geographic visualization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. CUBE.gl is built on top of Three.js and provides a high-level API specifically designed for geospatial visualization. It handles coordinate conversion (GPS to 3D), map tile integration, GeoJSON parsing, and camera controls, so you get the full power of Three.js with a geo-focused workflow. You can also access the underlying Three.js scene directly for custom rendering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the best open-source frameworks for WebGL data visualization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Popular open-source WebGL data visualization frameworks include CUBE.gl for 3D geospatial and digital twin applications, Deck.gl for large-scale 2D/3D data layers, CesiumJS for globe-based 3D GIS, and Kepler.gl for geospatial analytics. CUBE.gl stands out for its simplicity, Three.js integration, and focus on urban-scale 3D visualization with minimal boilerplate code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to render 3D buildings and terrain from real-world data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With CUBE.gl, you can render 3D buildings by loading OpenStreetMap or custom GeoJSON data using the Buildings layer, which automatically extrudes footprints to their real heights. For terrain, use the GeoTIFF loader to import elevation data (DEM/DSM) and generate a 3D terrain mesh. Both layers can be combined to create realistic city-scale 3D environments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CUBE.gl support real-time data visualization and animation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. CUBE.gl includes a built-in animation engine that supports GPS path animation, circular motion, and custom keyframe animations. You can visualize real-time IoT data streams as dynamic heatmaps, animated point clouds, arc connections, or moving 3D models along GPS trajectories — ideal for smart city monitoring and transportation visualization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to integrate CUBE.gl with Vue, React, or other frontend frameworks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CUBE.gl can be easily integrated with modern MVVM frameworks like Vue.js and React. Install it via npm, import the CUBE module, initialize the Space inside a mounted/useEffect lifecycle hook targeting a DOM container, and manage the visualization state through your framework's reactivity system. Detailed integration guides are available in the official documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of geospatial data visualization does CUBE.gl support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CUBE.gl supports a wide range of geospatial visualizations including: 3D extruded buildings and administrative boundaries, road networks, terrain and elevation rendering, bar charts and arc diagrams on maps, 3D heatmaps, point cloud datasets, tile map overlays, GLTF/GLB 3D model loading, animated GPS paths, text labels, and interactive object selection with fly-to camera controls."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css">
   
   <!-- GA -->
@@ -23,8 +156,14 @@
 </head>
 
 <style>
+  body, .content, .markdown-section {
+    background-color: #1a1a2e !important;
+  }
+  .sidebar {
+    background-color: #16162a !important;
+  }
   .progress{
-    background-color: #49DEFF;
+    background-color: #ddff00;
   }
 
   section.cover {
@@ -68,20 +207,27 @@
     opacity: .8;
   }
 
-  
-
-  
-
-
   .sidebar ul li.active>a{
-    color: #49DEFF;
+    color: #ddff00;
   }
 
   .markdown-section a{
-    color: #49DEFF;
+    color: #ddff00;
   }
+  .sidebar-toggle{
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+  }
+  @media (max-width: 768px) {
+    .sidebar-toggle{
+      width: 100%;
+      padding-top:14px;
+    }
+  }
+
   .sidebar-toggle span{ 
-    background-color: #49DEFF; 
+    background-color: #ddff00; 
   }
 
   
@@ -133,6 +279,33 @@
   .token.property {
     color: #dfcc71;
   }
+
+  /* Friend Links Footer */
+  .footer-links {
+    border-top: 1px solid #444;
+    margin-top: 60px;
+    padding: 28px 0 16px;
+  }
+  .footer-links h4 {
+    color: #aaa !important;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .footer-links .links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+  .footer-links .links-list a {
+    color: #999 !important;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-links .links-list a:hover {
+    color: #49DEFF !important;
+  }
 </style>
 <body>
   <div id="top"></div>
@@ -146,6 +319,36 @@
       // maxLevel: 4,
       // subMaxLevel: 2,
     }
+  </script>
+  <script>
+    // Friend links footer plugin
+    var footerPlugin = function(hook) {
+      var footerHTML = [
+        '<div class="footer-links">',
+        '<h4>Friends</h4>',
+        '<div class="links-list">',
+        '<a href="https://vibart.ai/" title="Vibart - AI Vibe Design for Next-Gen Art Community" target="_blank" rel="noopener">Vibart AI</a>',
+        '<a href="https://ai-architect.net/" title="Architect AI - AI Architecture Renderer, GPT for Architecture Design Idea Inspiration" target="_blank" rel="noopener">Architect AI</a>',
+        '<a href="https://interior-render.com" title="Interior Render AI - Any can re-design your room in seconds by photo, interior design by AI, get design inspiration for designers by GPT" target="_blank" rel="noopener">Interior Render AI</a>',
+        '<a href="https://game-generator.com/" title="AI Game Assets Generator - generate free game assets in seconds by AI, integrate AI workflow in your game, GPT for game development" target="_blank" rel="noopener">Game Assets Generator</a>',
+        '<a href="https://profile-avatar.com/" title="Profile Avatar AI - Generate distinctive and personalized cartoon style avatars" target="_blank" rel="noopener">Profile Avatar AI</a>',
+        '<a href="https://ecommerce-ai.net/" title="E-Commerce AI - Create professional e-commerce product photo for free with seconds" target="_blank" rel="noopener">E-Commerce AI</a>',
+        '<a href="https://industrial-render.com/" title="Industrial Render AI - Product design render by AI, AI for Industrial Design Render, GPT for Industrial Design Idea Inspiration" target="_blank" rel="noopener">Industrial Render AI</a>',
+        '<a href="https://launchai.app/" title="Launch AI - Launch your AI App" target="_blank" rel="noopener">Launch AI</a>',
+        '<a href="https://business-portrait.net/" title="Business Portrait AI - Create Professional Business Portrait Photo with AI for Free" target="_blank" rel="noopener">Business Portrait AI</a>',
+        '<a href="https://astrolooter.com" title="Astro Looter - a high-quality, top-down roguelike game with a captivating space exploration theme" target="_blank" rel="noopener">Astro Looter Game</a>',
+        '<a href="https://ironcoregames.com/" title="Iron Core Games - a developer of the Iron Core Mech Survivor game" target="_blank" rel="noopener">Iron Core: Mech Survivor</a>',
+        '<a href="https://soda-game.com/" title="SODA GAME STUDIO - We create ultra-quality games for everyone" target="_blank" rel="noopener">SODA GAME STUDIO</a>',
+        '</div>',
+        '</div>'
+      ].join('');
+
+      hook.afterEach(function(html) {
+        return html + footerHTML;
+      });
+    };
+
+    window.$docsify.plugins = (window.$docsify.plugins || []).concat(footerPlugin);
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
