@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-# CUBE.gl <small>Alpha 1.0</small>
+# CUBE.gl <small>Version 2</small>
 
 > Data-Driven Geospatial Data Visualization Framework
 <br><br><br><br>
