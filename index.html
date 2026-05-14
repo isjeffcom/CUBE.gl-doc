@@ -312,46 +312,7 @@
 <body>
   <div id="top"></div>
   <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: '',
-      repo: '',
-      loadSidebar: true,
-      coverpage: true,
-      // maxLevel: 4,
-      // subMaxLevel: 2,
-    }
-  </script>
-  <script>
-    // Friend links footer plugin
-    var footerPlugin = function(hook) {
-      var footerHTML = [
-        '<div class="footer-links">',
-        '<h4>Friends</h4>',
-        '<div class="links-list">',
-        '<a href="https://vibart.ai/" title="Vibart - AI Vibe Design for Next-Gen Art Community" target="_blank" rel="noopener">Vibart AI</a>',
-        '<a href="https://ai-architect.net/" title="Architect AI - AI Architecture Renderer, GPT for Architecture Design Idea Inspiration" target="_blank" rel="noopener">Architect AI</a>',
-        '<a href="https://interior-render.com" title="Interior Render AI - Any can re-design your room in seconds by photo, interior design by AI, get design inspiration for designers by GPT" target="_blank" rel="noopener">Interior Render AI</a>',
-        '<a href="https://game-generator.com/" title="AI Game Assets Generator - generate free game assets in seconds by AI, integrate AI workflow in your game, GPT for game development" target="_blank" rel="noopener">Game Assets Generator</a>',
-        '<a href="https://profile-avatar.com/" title="Profile Avatar AI - Generate distinctive and personalized cartoon style avatars" target="_blank" rel="noopener">Profile Avatar AI</a>',
-        '<a href="https://ecommerce-ai.net/" title="E-Commerce AI - Create professional e-commerce product photo for free with seconds" target="_blank" rel="noopener">E-Commerce AI</a>',
-        '<a href="https://industrial-render.com/" title="Industrial Render AI - Product design render by AI, AI for Industrial Design Render, GPT for Industrial Design Idea Inspiration" target="_blank" rel="noopener">Industrial Render AI</a>',
-        '<a href="https://launchai.app/" title="Launch AI - Launch your AI App" target="_blank" rel="noopener">Launch AI</a>',
-        '<a href="https://business-portrait.net/" title="Business Portrait AI - Create Professional Business Portrait Photo with AI for Free" target="_blank" rel="noopener">Business Portrait AI</a>',
-        '<a href="https://astrolooter.com" title="Astro Looter - a high-quality, top-down roguelike game with a captivating space exploration theme" target="_blank" rel="noopener">Astro Looter Game</a>',
-        '<a href="https://ironcoregames.com/" title="Iron Core Games - a developer of the Iron Core Mech Survivor game" target="_blank" rel="noopener">Iron Core: Mech Survivor</a>',
-        '<a href="https://soda-game.com/" title="SODA GAME STUDIO - We create ultra-quality games for everyone" target="_blank" rel="noopener">SODA GAME STUDIO</a>',
-        '</div>',
-        '</div>'
-      ].join('');
-
-      hook.afterEach(function(html) {
-        return html + footerHTML;
-      });
-    };
-
-    window.$docsify.plugins = (window.$docsify.plugins || []).concat(footerPlugin);
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- GitHub Pages 站点：Docsify 配置与友情链接见 ./docsify-boot.mjs、./otherSites.js -->
+  <script type="module" src="./docsify-boot.mjs"></script>
 </body>
 </html>
